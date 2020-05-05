@@ -1,0 +1,137 @@
+a{
+    color: rgb(41, 37, 37) !important
+}
+
+body {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 300 !important;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.heading h1 {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
+table {
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    border-spacing: 0;
+}
+
+table#form {
+    width: 350px;
+}
+
+input {
+    padding: 5px;
+    text-align: center;
+    width:50%;
+    border-radius: 8px;
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0 auto;
+
+}
+       
+.top-wrapper {
+    padding: 60px 0 60px 0;
+    background-color: rgb(255, 252, 247);
+    color: rgb(43, 38, 38);
+    text-align: center;
+    text-shadow:100px, 2px, 3px, wheat !important;
+}
+
+.middle-wrapper {
+    padding: 60px 0 80px 0;
+    background-color: rgb(253, 255, 131);
+    color: rgb(43, 38, 38);
+    text-align: center;
+}
+
+.bottom-wrapper {
+    padding: 60px 0 80px 0;
+    background-color: rgb(253, 255, 131);
+    color: rgb(41, 36, 36);
+    text-align: center;
+}
+
+.space {
+    margin-right: 30px !important;
+}
+
+.firstReco-wrapper {
+ padding-bottom: 80px;
+ padding-left: 5%;
+ padding-right: 5%;
+ text-align: center;
+}
+
+.firstReco {
+ float: left;
+ width: 50%;
+}
+
+.btn {
+    font-size: 2rem;
+}
+
+/* タブレット向けレイアウト */
+@media all and (max-width: 1000px) {
+   
+    .heading h1 {
+    font-size: 45px;
+    }
+    .container {
+        font-size: 40px;
+    }
+
+    .top-wrapper {
+        text-align: left;
+        }
+    .btn {
+        font-size: 3rem !important;
+        font-weight: 300 !important;
+        border-radius: 100rem !important;
+    }
+    }
+    .firstReco {
+        float: left;
+        width: 100%;
+        margin-bottom: 20px;
+       }
+   
+   /* スマホ向けレイアウト */
+   @media all and (max-width: 670px) {
+
+    .container {
+        font-size: 40px;
+    }
+
+    .heading h1 {
+        font-size: 30px;
+        }
+    
+    .top-wrapper {
+        text-align: left;
+        }
+    .btn {
+        font-weight: 300 !important;
+        font-size: 3rem !important;
+        border-radius: 100rem !important;
+    }
+    .firstReco {
+        float: left;
+        width: 100%;
+        margin-bottom: 20px;
+        }
+    }

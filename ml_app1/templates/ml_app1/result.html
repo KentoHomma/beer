@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Craft Beer Recommender</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="top-wrapper">
+        <div class="container">
+            <div class="heading">
+                <h1>Craft Beer Recommender</h1>
+                <br>AIがかなり雑にオススメのクラフトビールとビールスタイル(おおまかなビールの種類)を出力してくれます。
+                <br><br>■使い方<br>①アルコール度数とIBUを入力<br>②計算開始を押す<br>③結果表示を押す
+                <br><br>■使用データセット&アルゴリズム<br><a href="https://www.kaggle.com/nickhould/craft-cans">Craft Beers Dataset(Kaggle)</a>
+                <br>Catboost Classifier
+            </div>
+        </div>
+    </div>
+    <div id="result">
+        <div class="bottom-wrapper">
+            <div class="container">
+                <div class="heading">
+                    <div id="1">
+                        <h1>予測結果</h1>
+                    </div>
+                </div>
+                <div class="firstReco-wrapper">
+                    <div class="firstReco">
+                        <table class="table table-striped">
+                            <tr>
+                                <td colspan="8">イチオシビール</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">{{ first }}</td><br>
+                            </tr>
+                        </table>
+                        <button type="button" class="btn btn-outline-secondary"><a
+                            href="{{ beer_url.url }}" )>
+                            　google検索　</a></button></th>
+                    </div>
+
+                    <div class="firstReco">
+                        <table class="table table-striped">
+                            <tr>
+                                <td colspan="8">オススメスタイル</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">{{ style }}<br></td>
+                            </tr>
+                        </table>
+                        <button type="button" class="btn btn-outline-secondary"><a
+                            href="{{ style_url.url }}" )>
+                            　google検索　</a></button><br><br>
+                    </div>
+                </div>
+
+
+                <table class="table table-striped">
+                    <tr>
+                        <td colspan="4">オススメビール上位一覧</td>
+                    </tr>
+                    <tr>
+                        <td>名前</td>
+                        <td>％</td>
+                        <td>IBU</td>
+                        <td>生産地</td>
+                    </tr>
+                    {% for beer in result.itertuples %}
+                    <tr>
+                        <td>{{ beer.name }}</td>
+                        <td>{{ beer.abv }}</td>
+                        <td>{{ beer.ibu }}</td>
+                        <td>{{ beer.city }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <br>
+                <div class="btn-group">
+                    <div id="toggle2"><button type="button" class="btn btn-outline-secondary"><a href="/">　もう一度予測　</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<body>
+</html>

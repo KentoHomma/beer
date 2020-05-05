@@ -1,0 +1,3 @@
+# 仮想環境の除外
+/cbenv
+/catboost_model.pkl
